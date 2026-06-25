@@ -1,96 +1,71 @@
 import Reveal from "./Reveal";
-import { StarIcon } from "./icons";
+import { StoreButtons } from "./StoreButtons";
+import { HeartIcon, ShieldIcon, SparkleIcon } from "./icons";
 
-const testimonials = [
+const values = [
   {
-    quote:
-      "The first week home was a blur. Having every feed and nappy in one place — and being able to glance back — genuinely kept me sane.",
-    name: "Amara K.",
-    role: "Mum of one · Auckland",
-    initials: "AK",
+    icon: HeartIcon,
+    t: "Designed alongside new parents",
+    d: "Every screen was shaped by the real, foggy, 3am moments of early parenthood — not a boardroom.",
   },
   {
-    quote:
-      "My partner and I both log from our own phones and it just syncs. No more 'did you feed her?' texts at 2am.",
-    name: "James & Priya",
-    role: "First-time parents",
-    initials: "JP",
+    icon: ShieldIcon,
+    t: "Built with midwife feedback",
+    d: "Shaped together with healthcare professionals so the sharing and monitoring genuinely fit how they work.",
   },
   {
-    quote:
-      "I shared the contraction timer with my midwife and she could see everything live. It made the call about when to come in so much easier.",
-    name: "Sophie L.",
-    role: "Mum of two",
-    initials: "SL",
-  },
-  {
-    quote:
-      "The sleep charts finally showed me the pattern I couldn't see in the fog. Small thing, huge difference.",
-    name: "Daniel R.",
-    role: "Dad · Wellington",
-    initials: "DR",
-  },
-  {
-    quote:
-      "Asked the assistant about feed-time crying at midnight. Calm, sensible advice — and it told me exactly when to call someone.",
-    name: "Mei T.",
-    role: "Mum of one",
-    initials: "MT",
-  },
-  {
-    quote:
-      "It's the only baby app that doesn't feel like a spreadsheet. It's calm. That matters when everything else isn't.",
-    name: "Olivia B.",
-    role: "Mum of three",
-    initials: "OB",
+    icon: SparkleIcon,
+    t: "Privacy-first by design",
+    d: "Consent-based, encrypted and revocable sharing. Your family's data is yours — never sold, never mined.",
   },
 ];
 
-function Card({ t }: { t: (typeof testimonials)[number] }) {
-  return (
-    <figure className="mb-6 break-inside-avoid rounded-3xl border border-line bg-white p-6 shadow-[0_10px_30px_-22px_rgba(15,61,39,0.4)]">
-      <div className="flex gap-0.5">
-        {Array.from({ length: 5 }).map((_, i) => (
-          <StarIcon key={i} className="h-4 w-4 text-sprout-400" />
-        ))}
-      </div>
-      <blockquote className="mt-4 text-[15.5px] leading-relaxed text-ink">
-        &ldquo;{t.quote}&rdquo;
-      </blockquote>
-      <figcaption className="mt-5 flex items-center gap-3">
-        <span className="grid h-10 w-10 place-items-center rounded-full bg-mint text-[13px] font-bold text-sprout-700">
-          {t.initials}
-        </span>
-        <span>
-          <span className="block text-[14px] font-semibold text-sprout-900">
-            {t.name}
-          </span>
-          <span className="block text-[12.5px] text-ink-soft">{t.role}</span>
-        </span>
-      </figcaption>
-    </figure>
-  );
-}
-
 export default function Testimonials() {
   return (
-    <section className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section className="py-20 sm:py-28">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="text-[13px] font-semibold uppercase tracking-wider text-sprout-500">
-            From real parents
+            Brought to life with early parent feedback
           </span>
           <h2 className="mt-3 text-[clamp(2rem,4vw,3.2rem)] font-bold tracking-[-0.02em] text-sprout-900">
-            Quietly indispensable.
+            Join our first families.
           </h2>
+          <p className="mt-4 text-lg text-ink-soft">
+            Sprout Bubba is new — and being shaped, in the open, with the parents
+            and midwives using it today. Be part of how it grows.
+          </p>
         </Reveal>
 
         <Reveal delay={120}>
-          <div className="mt-14 columns-1 gap-6 sm:columns-2 lg:columns-3">
-            {testimonials.map((t) => (
-              <Card key={t.name} t={t} />
-            ))}
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {values.map((v) => {
+              const Icon = v.icon;
+              return (
+                <div
+                  key={v.t}
+                  className="lift rounded-3xl border border-line bg-white p-7 shadow-[0_10px_30px_-22px_rgba(15,61,39,0.4)]"
+                >
+                  <span className="grid h-12 w-12 place-items-center rounded-2xl bg-mint text-sprout-600">
+                    <Icon className="h-6 w-6" />
+                  </span>
+                  <h3 className="mt-5 text-[1.15rem] font-bold text-sprout-900">
+                    {v.t}
+                  </h3>
+                  <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
+                    {v.d}
+                  </p>
+                </div>
+              );
+            })}
           </div>
+        </Reveal>
+
+        <Reveal delay={120} className="mt-12 flex flex-col items-center gap-4 text-center">
+          <p className="text-[15px] font-medium text-ink-soft">
+            Honest from day one: these are our principles, not paid reviews.
+          </p>
+          <StoreButtons />
         </Reveal>
       </div>
     </section>

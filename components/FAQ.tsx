@@ -66,7 +66,7 @@ function Item({ q, a, defaultOpen }: { q: string; a: string; defaultOpen?: boole
 
 export default function FAQ() {
   return (
-    <section id="faq" className="scroll-mt-20 py-24 sm:py-32">
+    <section id="faq" className="scroll-mt-20 py-20 sm:py-28">
       <div className="mx-auto max-w-3xl px-5 sm:px-8">
         <Reveal className="text-center">
           <span className="text-[13px] font-semibold uppercase tracking-wider text-sprout-500">

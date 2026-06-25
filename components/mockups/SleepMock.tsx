@@ -43,7 +43,11 @@ export default function SleepMock() {
                 <div className="flex w-full flex-1 items-end">
                   <div
                     className="w-full rounded-t-lg bg-gradient-to-t from-sprout-300 to-sprout-400"
-                    style={{ height: `${(day.h / max) * 100}%` }}
+                    style={{
+                      height: `${(day.h / max) * 100}%`,
+                      ["--bar-delay" as string]: `${i * 80}ms`,
+                    }}
+                    data-bar
                   />
                 </div>
                 <span className="text-[10px] font-medium text-ink-soft">{day.d}</span>

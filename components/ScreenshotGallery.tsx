@@ -16,7 +16,7 @@ const shots = [
 
 export default function ScreenshotGallery() {
   return (
-    <section className="overflow-hidden py-24 sm:py-28">
+    <section className="overflow-hidden py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="text-[13px] font-semibold uppercase tracking-wider text-sprout-500">

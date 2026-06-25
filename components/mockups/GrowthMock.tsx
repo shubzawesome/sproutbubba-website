@@ -41,7 +41,15 @@ export default function GrowthMock() {
             <path d="M14 96 C70 80 150 46 252 18" stroke="#cfe9d8" strokeWidth="1.5" fill="none" strokeDasharray="3 4" />
             {/* baby curve */}
             <path d="M14 124 C70 112 140 82 252 52 L252 150 L14 150 Z" fill="url(#growthFill)" />
-            <path d="M14 124 C70 112 140 82 252 52" stroke="#2c934e" strokeWidth="2.6" fill="none" strokeLinecap="round" />
+            <path
+              d="M14 124 C70 112 140 82 252 52"
+              stroke="#2c934e"
+              strokeWidth="2.6"
+              fill="none"
+              strokeLinecap="round"
+              data-draw
+              style={{ ["--draw-len" as string]: 300 }}
+            />
             {/* points */}
             {[
               [14, 124],
@@ -50,7 +58,17 @@ export default function GrowthMock() {
               [210, 66],
               [252, 52],
             ].map(([x, y], i) => (
-              <circle key={i} cx={x} cy={y} r={i === 4 ? 5 : 3} fill="#fff" stroke="#2c934e" strokeWidth="2.4" />
+              <circle
+                key={i}
+                cx={x}
+                cy={y}
+                r={i === 4 ? 5 : 3}
+                fill="#fff"
+                stroke="#2c934e"
+                strokeWidth="2.4"
+                data-dot
+                style={{ ["--dot-delay" as string]: `${0.9 + i * 0.12}s` }}
+              />
             ))}
           </svg>
         </div>

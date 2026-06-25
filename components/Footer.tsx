@@ -1,4 +1,5 @@
 import Brand from "./Brand";
+import { StoreButtons } from "./StoreButtons";
 
 const groups = [
   {
@@ -13,7 +14,7 @@ const groups = [
   {
     title: "Company",
     links: [
-      { label: "Support", href: "#" },
+      { label: "Support", href: "mailto:support@sproutbubba.app" },
       { label: "Contact", href: "mailto:hello@sproutbubba.app" },
       { label: "FAQ", href: "#faq" },
     ],
@@ -42,7 +43,7 @@ function Social({
       aria-label={label}
       className="grid h-10 w-10 place-items-center rounded-full border border-line text-ink-soft transition-colors hover:border-sprout-300 hover:text-sprout-600"
     >
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
         <path d={d} />
       </svg>
     </a>
@@ -53,13 +54,28 @@ export default function Footer() {
   return (
     <footer className="border-t border-line bg-paper-soft">
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
-          <div className="max-w-xs">
+        <div className="grid gap-12 lg:grid-cols-[1.5fr_repeat(3,1fr)]">
+          <div className="max-w-sm">
             <Brand />
             <p className="mt-4 text-[14px] leading-relaxed text-ink-soft">
               The calm, beautifully designed baby &amp; pregnancy tracker — made
               with new parents, for new parents.
             </p>
+
+            <div className="mt-6">
+              <p className="mb-3 text-[12px] font-semibold uppercase tracking-wider text-sprout-500">
+                Get the app
+              </p>
+              <StoreButtons />
+            </div>
+
+            <a
+              href="mailto:hello@sproutbubba.app"
+              className="mt-6 inline-block text-[14px] font-medium text-sprout-700 hover:text-sprout-900"
+            >
+              hello@sproutbubba.app
+            </a>
+
             <div className="mt-5 flex gap-3">
               <Social
                 href="#"
@@ -100,11 +116,12 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-line pt-7 text-[13px] text-ink-soft sm:flex-row">
+        <div className="mt-14 flex flex-col gap-4 border-t border-line pt-7 text-[13px] text-ink-soft sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Sprout Bubba. Made with care for growing families.</p>
           <p className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-sprout-400" />
-            Not a substitute for professional medical advice.
+            <span className="h-2 w-2 shrink-0 rounded-full bg-sprout-400" />
+            Sprout Bubba provides general guidance and is not a substitute for
+            professional medical advice.
           </p>
         </div>
       </div>

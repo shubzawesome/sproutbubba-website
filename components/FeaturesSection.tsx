@@ -23,7 +23,7 @@ function MiniStat({ k, v }: { k: string; v: string }) {
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="relative scroll-mt-20 py-24 sm:py-32">
+    <section id="features" className="relative scroll-mt-20 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="text-[13px] font-semibold uppercase tracking-wider text-sprout-500">
@@ -38,7 +38,7 @@ export default function FeaturesSection() {
           </p>
         </Reveal>
 
-        <div className="mt-20 space-y-28">
+        <div className="mt-16 space-y-24">
           {/* Feeding */}
           <Feature
             eyebrow="Feeding"
@@ -80,6 +80,28 @@ export default function FeaturesSection() {
               ))}
             </ul>
           </Feature>
+
+          {/* centered full-width moment — breaks the alternating rhythm */}
+          <Reveal direction="scale" className="py-2">
+            <div className="relative mx-auto max-w-3xl overflow-hidden rounded-[2rem] border border-line bg-paper-soft px-8 py-12 text-center sm:py-14">
+              <div
+                aria-hidden
+                className="absolute inset-0 -z-10 animate-gradient opacity-60"
+                style={{
+                  background:
+                    "radial-gradient(50% 80% at 50% 0%, #dbf5e4 0%, transparent 60%)",
+                  backgroundSize: "180% 180%",
+                }}
+              />
+              <p className="text-[13px] font-semibold uppercase tracking-wider text-sprout-500">
+                Both parents, one source of truth
+              </p>
+              <p className="mx-auto mt-3 max-w-2xl text-[clamp(1.5rem,3vw,2.2rem)] font-bold leading-[1.15] tracking-[-0.01em] text-sprout-900">
+                Log from either phone and it syncs instantly. No more
+                &ldquo;did you already feed her?&rdquo; texts at 2am.
+              </p>
+            </div>
+          </Reveal>
 
           {/* Growth */}
           <Feature

@@ -190,3 +190,79 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ------------------------------------------------------------------ */
+/*  Premium micro-interactions                                         */
+/* ------------------------------------------------------------------ */
+
+/* Button / card lift on hover (subtle, never flashy) */
+.lift {
+  transition:
+    transform 0.35s var(--ease-soft),
+    box-shadow 0.35s var(--ease-soft);
+}
+@media (hover: hover) {
+  .lift:hover {
+    transform: translateY(-3px);
+  }
+}
+.lift:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* Self-drawing SVG lines — revealed when an ancestor [data-shown] flips true */
+[data-draw] {
+  stroke-dasharray: var(--draw-len, 600);
+  stroke-dashoffset: var(--draw-len, 600);
+  transition: stroke-dashoffset 1.5s var(--ease-soft) var(--draw-delay, 0.2s);
+}
+[data-shown="true"] [data-draw] {
+  stroke-dashoffset: 0;
+}
+
+/* Bars that grow up into place */
+[data-bar] {
+  transform: scaleY(0.04);
+  transform-origin: bottom;
+  transition: transform 0.85s var(--ease-soft) var(--bar-delay, 0ms);
+}
+[data-shown="true"] [data-bar] {
+  transform: scaleY(1);
+}
+
+/* Soft point fade for chart dots */
+[data-dot] {
+  opacity: 0;
+  transition: opacity 0.5s ease var(--dot-delay, 0.9s);
+}
+[data-shown="true"] [data-dot] {
+  opacity: 1;
+}
+
+/* Mouse-parallax layer (transform set via CSS vars from JS) */
+.parallax {
+  transform: translate3d(
+    calc(var(--px, 0) * 1px),
+    calc(var(--py, 0) * 1px),
+    0
+  );
+  transition: transform 0.5s var(--ease-soft);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-draw] {
+    stroke-dashoffset: 0 !important;
+    transition: none !important;
+  }
+  [data-bar] {
+    transform: scaleY(1) !important;
+    transition: none !important;
+  }
+  [data-dot] {
+    opacity: 1 !important;
+  }
+  .parallax {
+    transform: none !important;
+  }
+}

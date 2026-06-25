@@ -76,21 +76,35 @@ export default function MidwifeSection() {
   return (
     <section
       id="midwives"
-      className="relative scroll-mt-20 bg-paper-soft py-24 sm:py-32"
+      className="relative scroll-mt-20 overflow-hidden bg-paper-soft py-20 sm:py-28"
     >
+      {/* subtle premium backdrop to mark this as the standout section */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 opacity-70"
+        style={{
+          background:
+            "radial-gradient(40% 45% at 85% 0%, #dbf5e4 0%, transparent 60%), radial-gradient(35% 40% at 5% 100%, #e8f7ee 0%, transparent 60%)",
+        }}
+      />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <Reveal className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-3xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-sprout-200 bg-white px-3.5 py-1.5 text-[13px] font-semibold text-sprout-700">
             <ShieldIcon className="h-4 w-4" />
-            The Sprout Bubba difference
+            Why midwives trust Sprout Bubba
           </span>
-          <h2 className="mt-4 text-[clamp(2rem,4.2vw,3.3rem)] font-bold tracking-[-0.02em] text-sprout-900">
-            Share securely with your midwife.
+          <h2 className="mt-4 text-[clamp(2.1rem,4.6vw,3.5rem)] font-bold leading-[1.06] tracking-[-0.02em] text-sprout-900">
+            The only baby app your midwife can see too.
           </h2>
-          <p className="mt-4 text-lg text-ink-soft">
-            Give your healthcare provider a clear, real-time window into your
-            baby&rsquo;s data — with the privacy and control of an enterprise
-            platform.
+          <p className="mt-5 text-lg text-ink-soft">
+            Securely share your baby&rsquo;s real-time data with your healthcare
+            provider — feeds, growth, even live contractions — with the privacy,
+            consent and control of an enterprise platform. This is the difference
+            that turns anxious guesswork into shared, professional care.
+          </p>
+          <p className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-[12.5px] font-semibold text-sprout-700 ring-1 ring-line">
+            <HeartIcon className="h-3.5 w-3.5 text-sprout-400" />
+            Built with midwife feedback
           </p>
         </Reveal>
 

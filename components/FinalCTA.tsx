@@ -3,7 +3,7 @@ import { StoreButtons } from "./StoreButtons";
 
 export default function FinalCTA() {
   return (
-    <section id="download" className="scroll-mt-20 px-5 pb-24 sm:px-8 sm:pb-32">
+    <section id="download" className="scroll-mt-20 px-5 pb-20 sm:px-8 sm:pb-28">
       <Reveal direction="scale">
         <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] bg-sprout-900 px-6 py-20 text-center sm:px-12 sm:py-28">
           {/* glow */}
