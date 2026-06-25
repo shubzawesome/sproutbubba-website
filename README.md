@@ -60,6 +60,26 @@ components/
 - System font stack (SF Pro / -apple-system) for an Apple-grade feel with zero
   font network requests.
 
+## Swapping the illustrations for watercolour art
+
+The warm mother/baby, midwife and meadow scenes live in `components/art/` as
+hand-built SVG (`MotherBaby.tsx`, `MidwifeArt.tsx`, `MeadowMother.tsx`). To use
+real watercolour images instead:
+
+1. Drop the file in `public/art/` (e.g. `public/art/hero.png`).
+2. In the section that uses it (`Hero.tsx`, `MidwifeSection.tsx`,
+   `FinalCTA.tsx`), replace the art component with `next/image`, keeping the
+   same wrapper/size, e.g.:
+
+   ```tsx
+   import Image from "next/image";
+   // replace <MotherBaby className="..."/> with:
+   <Image src="/art/hero.png" alt="A mother cradling her baby" width={960} height={960} className="h-auto w-full" priority />
+   ```
+
+Each art component already carries descriptive `aria-label`s, so accessibility
+stays intact either way.
+
 ## Notes / next steps
 
 - The phone screens are hand-built CSS/SVG recreations of the real app UI.

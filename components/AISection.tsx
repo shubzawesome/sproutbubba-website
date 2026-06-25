@@ -63,7 +63,7 @@ export default function AISection() {
               AI guidance — not medical advice
             </span>
             <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-bold leading-[1.08] tracking-[-0.02em] text-white">
-              The reassurance of a second opinion, any hour of the night.
+              Gentle AI guidance, exactly when you need it most.
             </h2>
             <p className="mt-5 max-w-lg text-[1.08rem] leading-relaxed text-white/75">
               Ask anything — fussy feeds, sleep regressions, nappy worries. Sprout

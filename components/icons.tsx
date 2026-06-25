@@ -134,3 +134,10 @@ export const FlagIcon = (p: IconProps) => (
     <path d="M6 21V4M6 5h11l-2 3.5L17 12H6" />
   </svg>
 );
+
+export const NappyIcon = (p: IconProps) => (
+  <svg {...base(p)}>
+    <path d="M4 7h16v3a8 8 0 0 1-16 0V7Z" />
+    <path d="M4 9c2.5 1.2 5 1.8 8 1.8S17.5 10.2 20 9" />
+  </svg>
+);

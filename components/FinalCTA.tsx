@@ -1,33 +1,46 @@
 import Reveal from "./Reveal";
 import { StoreButtons } from "./StoreButtons";
+import MeadowMother from "./art/MeadowMother";
+import { LittleHeart } from "./art/Botanicals";
 
 export default function FinalCTA() {
   return (
     <section id="download" className="scroll-mt-20 px-5 pb-20 sm:px-8 sm:pb-28">
       <Reveal direction="scale">
-        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] bg-sprout-900 px-6 py-20 text-center sm:px-12 sm:py-28">
-          {/* glow */}
+        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] border border-line bg-cream-deep px-6 pt-16 text-center sm:px-12 sm:pt-20">
+          {/* soft sky wash */}
           <div
             aria-hidden
-            className="absolute inset-0 opacity-70"
+            className="absolute inset-0 -z-10 opacity-80"
             style={{
               background:
-                "radial-gradient(45% 55% at 50% 0%, rgba(92,203,122,0.4) 0%, transparent 60%), radial-gradient(40% 40% at 85% 90%, rgba(143,220,171,0.22) 0%, transparent 60%)",
+                "radial-gradient(60% 70% at 50% 0%, #eef4e6 0%, transparent 60%), radial-gradient(40% 50% at 85% 10%, #f3e3d4 0%, transparent 60%)",
             }}
           />
-          <div className="relative">
-            <h2 className="mx-auto max-w-3xl text-[clamp(2.1rem,4.6vw,3.6rem)] font-bold leading-[1.07] tracking-[-0.02em] text-white">
-              Spend less time tracking.{" "}
-              <span className="text-sprout-300">More time enjoying your baby.</span>
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg text-white/70">
-              Join the parents who&rsquo;ve made Sprout Bubba part of their day.
-              Free to start, calming by design.
-            </p>
-            <div className="mt-10 flex justify-center">
-              <StoreButtons />
-            </div>
+
+          <Reveal>
+            <span className="inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-wider text-sprout-500">
+              <LittleHeart className="h-4 w-4" /> You&rsquo;ve got this
+            </span>
+          </Reveal>
+
+          <h2 className="mx-auto mt-4 max-w-3xl text-[clamp(2.2rem,5vw,3.8rem)] font-bold leading-[1.05] tracking-[-0.02em] text-sprout-900">
+            You&rsquo;re doing an amazing job.
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-ink-soft">
+            Sprout Bubba is here to help you enjoy the little moments — while we
+            quietly remember the rest. Free to start, calming by design.
+          </p>
+
+          <div className="mt-9 flex justify-center">
+            <StoreButtons size="lg" />
           </div>
+
+          {/* meadow scene anchoring the bottom */}
+          <MeadowMother
+            aria-hidden
+            className="mt-10 h-auto w-full max-w-3xl mx-auto select-none"
+          />
         </div>
       </Reveal>
     </section>

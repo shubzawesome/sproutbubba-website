@@ -27,14 +27,14 @@ export default function FeaturesSection() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="text-[13px] font-semibold uppercase tracking-wider text-sprout-500">
-            One calm home for it all
+            Made for the everyday
           </span>
           <h2 className="mt-3 text-[clamp(2rem,4vw,3.2rem)] font-bold tracking-[-0.02em] text-sprout-900">
             Track everything. Stress about nothing.
           </h2>
           <p className="mt-4 text-lg text-ink-soft">
-            Every part of your baby&rsquo;s day, designed to be logged in a tap
-            and understood at a glance.
+            Every part of your baby&rsquo;s day — logged in a tap, understood at a
+            glance, and gently kept for whenever you need it.
           </p>
         </Reveal>
 

@@ -6,7 +6,7 @@ import { MenuIcon, CloseIcon } from "./icons";
 
 const links = [
   { label: "Features", href: "#features" },
-  { label: "AI", href: "#ai" },
+  { label: "AI Assistant", href: "#ai" },
   { label: "Midwives", href: "#midwives" },
   { label: "FAQ", href: "#faq" },
 ];
@@ -56,9 +56,12 @@ export default function Navbar() {
         <div className="hidden md:block">
           <a
             href="#download"
-            className="rounded-full bg-sprout-400 px-5 py-2.5 text-[15px] font-semibold text-sprout-900 shadow-[0_8px_22px_-10px_rgba(44,147,78,0.7)] transition-all duration-300 hover:bg-sprout-300 hover:shadow-[0_10px_26px_-10px_rgba(44,147,78,0.8)] active:scale-95"
+            className="lift inline-flex items-center gap-2 rounded-full bg-sprout-900 px-5 py-2.5 text-[15px] font-semibold text-white shadow-[0_10px_26px_-12px_rgba(15,61,39,0.7)] hover:bg-[#0a2c1c]"
           >
-            Download
+            Download App
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14" />
+            </svg>
           </a>
         </div>
 
