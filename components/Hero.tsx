@@ -86,7 +86,7 @@ export default function Hero() {
           {/* art + phones */}
           <Reveal direction="scale" delay={180} className="relative">
             <MouseParallax depth={14}>
-              <div className="relative mx-auto max-w-md">
+              <div className="relative mx-auto max-w-md -translate-x-6 lg:translate-x-0">
                 <Image
                   src="/art/hero-v2.png"
                   alt="A mother tenderly cradling her sleeping baby"
