@@ -1,26 +1,192 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ------------------------------------------------------------------ */
+/*  Sprout Bubba — design tokens                                       */
+/* ------------------------------------------------------------------ */
+@theme {
+  /* Brand */
+  --color-sprout-50: #f0fbf4;
+  --color-sprout-100: #dbf5e4;
+  --color-sprout-200: #b9ebcb;
+  --color-sprout-300: #8fdcab;
+  --color-sprout-400: #5ccb7a; /* primary */
+  --color-sprout-500: #3eb463;
+  --color-sprout-600: #2c934e;
+  --color-sprout-700: #257540;
+  --color-sprout-800: #205d36;
+  --color-sprout-900: #0f3d27; /* deep forest — headings */
+
+  --color-mint: #e8f7ee;
+  --color-mint-deep: #d2efdd;
+
+  /* Neutrals */
+  --color-ink: #14241c;        /* body text on light */
+  --color-ink-soft: #4b5a52;   /* secondary text */
+  --color-paper: #ffffff;
+  --color-paper-soft: #f7faf8;
+  --color-line: #e7ece9;
+
+  /* Typography */
+  --font-sans: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, "Apple Color Emoji", sans-serif;
+
+  /* Radii */
+  --radius-xl2: 1.75rem;
+
+  /* Easing */
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Animations */
+  --animate-float-slow: float 7s var(--ease-soft) infinite;
+  --animate-float-slower: float 9s var(--ease-soft) infinite;
+  --animate-gradient: gradient-pan 18s ease infinite;
+  --animate-pulse-ring: pulse-ring 2.4s var(--ease-soft) infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
   }
 }
 
+@keyframes gradient-pan {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.55;
+  }
+  80%,
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Base                                                               */
+/* ------------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-sprout-200);
+  color: var(--color-sprout-900);
+}
+
+/* Tasteful focus ring */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-sprout-500);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Scroll-reveal system (the "Framer-like" motion layer)             */
+/*  Components add data-reveal; Reveal.tsx toggles data-shown.        */
+/* ------------------------------------------------------------------ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s var(--ease-soft),
+    transform 0.8s var(--ease-soft);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+[data-reveal="left"] {
+  transform: translateX(-36px);
+}
+[data-reveal="right"] {
+  transform: translateX(36px);
+}
+[data-reveal="scale"] {
+  transform: scale(0.94);
+}
+[data-reveal][data-shown="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Utility: animated brand gradient text */
+.text-gradient {
+  background: linear-gradient(
+    100deg,
+    var(--color-sprout-600),
+    var(--color-sprout-400) 55%,
+    var(--color-sprout-300)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Utility: soft card */
+.card-soft {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  box-shadow:
+    0 1px 2px rgba(16, 61, 39, 0.04),
+    0 12px 32px -16px rgba(16, 61, 39, 0.18);
+}
+
+/* Glass navbar */
+.glass {
+  background: color-mix(in srgb, var(--color-paper) 72%, transparent);
+  backdrop-filter: saturate(180%) blur(18px);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent);
+}
+
+/* Hide scrollbars on horizontal gallery */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
