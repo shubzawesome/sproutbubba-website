@@ -13,6 +13,8 @@ interface FeatureProps {
   /** extra content under the body (bullets, mini cards) */
   children?: ReactNode;
   tilt?: number;
+  visual?: "phone" | "illustration";
+  copyBackground?: ReactNode;
 }
 
 export default function Feature({
@@ -24,14 +26,24 @@ export default function Feature({
   reverse = false,
   children,
   tilt = 0,
+  visual = "phone",
+  copyBackground,
 }: FeatureProps) {
   return (
     <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
       {/* copy */}
       <Reveal
         direction={reverse ? "right" : "left"}
-        className={reverse ? "lg:order-2" : ""}
+        className={["relative isolate", reverse ? "lg:order-2" : ""].join(" ")}
       >
+        {copyBackground && (
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 -z-10 overflow-visible"
+          >
+            {copyBackground}
+          </div>
+        )}
         <span className="inline-flex items-center gap-2 rounded-full bg-mint px-3 py-1.5 text-[13px] font-semibold text-sprout-700">
           <Icon className="h-4 w-4" />
           {eyebrow}
@@ -45,17 +57,26 @@ export default function Feature({
         {children && <div className="mt-7">{children}</div>}
       </Reveal>
 
-      {/* phone */}
+      {/* visual */}
       <Reveal
         direction={reverse ? "left" : "right"}
         delay={120}
         className={reverse ? "lg:order-1" : ""}
       >
-        <div className="mx-auto w-[clamp(15rem,70%,19rem)]">
-          <PhoneFrame float="slow" tilt={tilt}>
+        {visual === "illustration" ? (
+          <div
+            className="mx-auto w-full max-w-[34rem]"
+            style={{ transform: `rotate(${tilt}deg)` }}
+          >
             {mockup}
-          </PhoneFrame>
-        </div>
+          </div>
+        ) : (
+          <div className="mx-auto w-[clamp(15rem,70%,19rem)]">
+            <PhoneFrame float="slow" tilt={tilt}>
+              {mockup}
+            </PhoneFrame>
+          </div>
+        )}
       </Reveal>
     </div>
   );

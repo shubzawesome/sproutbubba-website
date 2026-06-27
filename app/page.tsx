@@ -3,11 +3,7 @@ import Hero from "@/components/Hero";
 import FeatureStrip from "@/components/FeatureStrip";
 import BeforeAfter from "@/components/BeforeAfter";
 import FeaturesSection from "@/components/FeaturesSection";
-import GuidanceSection from "@/components/GuidanceSection";
 import MidwifeSection from "@/components/MidwifeSection";
-import JourneySection from "@/components/JourneySection";
-import ComingSoonAI from "@/components/ComingSoonAI";
-import ScreenshotGallery from "@/components/ScreenshotGallery";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
@@ -28,11 +24,7 @@ export default function Home() {
         <FeatureStrip />
         <BeforeAfter />
         <FeaturesSection />
-        <GuidanceSection />
         <MidwifeSection />
-        <JourneySection />
-        <ComingSoonAI />
-        <ScreenshotGallery />
         <Testimonials />
         <FAQ />
         <FinalCTA />

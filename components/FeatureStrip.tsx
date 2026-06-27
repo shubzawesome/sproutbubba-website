@@ -30,28 +30,28 @@ const items: Item[] = [
 
 export default function FeatureStrip() {
   return (
-    <section className="relative py-12 sm:py-16">
+    <section className="relative py-8 sm:py-10">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-[clamp(1.8rem,3.6vw,2.6rem)] font-bold tracking-[-0.02em] text-sprout-900">
+          <h2 className="text-[clamp(1.55rem,3vw,2.1rem)] font-bold tracking-[-0.02em] text-sprout-900">
             Everything in one place
           </h2>
-          <p className="mt-3 text-[1.05rem] text-ink-soft">
+          <p className="mt-2 text-[0.98rem] text-ink-soft">
             So you can stop keeping track in your head.
           </p>
         </Reveal>
 
         <Reveal delay={100}>
-          <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
+          <ul className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-3 lg:grid-cols-6">
             {items.map((it) => {
               const Icon = it.icon;
               return (
                 <li
                   key={it.label}
-                  className="lift rounded-2xl border border-line bg-paper p-4 text-center shadow-[0_10px_28px_-22px_rgba(80,60,40,0.4)]"
+                  className="lift rounded-2xl border border-line bg-paper p-3.5 text-center shadow-[0_10px_28px_-24px_rgba(80,60,40,0.4)]"
                 >
                   <span
-                    className={`mx-auto grid h-14 w-14 place-items-center rounded-2xl ${it.tint} text-sprout-700`}
+                    className={`mx-auto grid h-12 w-12 place-items-center rounded-2xl ${it.tint} text-sprout-700`}
                   >
                     {it.img ? (
                       <Image
@@ -59,10 +59,10 @@ export default function FeatureStrip() {
                         alt={it.label}
                         width={56}
                         height={56}
-                        className="h-12 w-12 object-contain"
+                        className="h-10 w-10 object-contain"
                       />
                     ) : (
-                      <Icon className="h-7 w-7" />
+                      <Icon className="h-6 w-6" />
                     )}
                   </span>
                   <h3 className="mt-3 text-[14px] font-bold text-sprout-900">

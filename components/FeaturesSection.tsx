@@ -1,7 +1,8 @@
+import Image from "next/image";
 import Feature from "./Feature";
 import Reveal from "./Reveal";
 import SectionLeaves from "./art/SectionLeaves";
-import FeedingMock from "./mockups/FeedingMock";
+import FeedingTimelineVisual from "./FeedingTimelineVisual";
 import SleepMock from "./mockups/SleepMock";
 import GrowthMock from "./mockups/GrowthMock";
 import {
@@ -13,11 +14,30 @@ import {
   CheckIcon,
 } from "./icons";
 
-function MiniStat({ k, v }: { k: string; v: string }) {
+function FeedingCue({
+  iconSrc,
+  k,
+  v,
+}: {
+  iconSrc: string;
+  k: string;
+  v: string;
+}) {
   return (
-    <div className="rounded-2xl border border-line bg-white px-4 py-3">
-      <div className="text-xl font-bold text-sprout-900">{v}</div>
-      <div className="text-[12px] font-medium text-ink-soft">{k}</div>
+    <div className="flex items-center gap-3 rounded-2xl border border-line bg-white px-3.5 py-3 shadow-[0_10px_28px_-22px_rgba(15,61,39,0.35)]">
+      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-mint">
+        <Image
+          src={iconSrc}
+          alt=""
+          width={44}
+          height={44}
+          className="h-8 w-8 object-contain"
+        />
+      </span>
+      <div>
+        <div className="text-[15px] font-bold text-sprout-900">{v}</div>
+        <div className="text-[12px] font-medium text-ink-soft">{k}</div>
+      </div>
     </div>
   );
 }
@@ -47,13 +67,13 @@ export default function FeaturesSection() {
             icon={BottleIcon}
             title={<>A feeding timeline you can actually read.</>}
             body="Breast, bottle and pumping in one live timeline. Start a nursing timer with a tap, switch sides, and see the whole day at a glance — no spreadsheets, no guesswork at 3am."
-            mockup={<FeedingMock />}
-            tilt={-2}
+            mockup={<FeedingTimelineVisual />}
+            visual="illustration"
           >
-            <div className="grid grid-cols-3 gap-3">
-              <MiniStat k="Feeds today" v="7" />
-              <MiniStat k="Avg interval" v="2h 50m" />
-              <MiniStat k="Both sides" v="Tracked" />
+            <div className="grid gap-3 sm:grid-cols-3">
+              <FeedingCue iconSrc="/art/icons/feeding.png" k="Feeds today" v="7" />
+              <FeedingCue iconSrc="/art/icons/contractions.png" k="Avg interval" v="2h 50m" />
+              <FeedingCue iconSrc="/art/icons/milestones.png" k="Both sides" v="Tracked" />
             </div>
           </Feature>
 
@@ -66,6 +86,19 @@ export default function FeaturesSection() {
             mockup={<SleepMock />}
             reverse
             tilt={2}
+            copyBackground={
+              <>
+                <div className="absolute -right-20 top-8 hidden h-72 w-72 rounded-full bg-mint-deep/45 blur-3xl lg:block" />
+                <Image
+                src="/art/sleep-background-v1-transparent.png"
+                alt=""
+                width={1706}
+                height={922}
+                sizes="(max-width: 1024px) 90vw, 44vw"
+                  className="absolute -left-[4%] -top-24 hidden w-[43rem] max-w-none opacity-[0.34] mix-blend-multiply saturate-[0.92] [mask-image:linear-gradient(to_right,transparent_0%,black_38%,black_100%)] lg:block"
+                />
+              </>
+            }
           >
             <ul className="space-y-2.5">
               {[

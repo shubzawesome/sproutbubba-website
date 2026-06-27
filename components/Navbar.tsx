@@ -6,7 +6,6 @@ import { MenuIcon, CloseIcon } from "./icons";
 
 const links = [
   { label: "Features", href: "#features" },
-  { label: "Guidance", href: "#guidance" },
   { label: "Midwives", href: "#midwives" },
   { label: "FAQ", href: "#faq" },
 ];
