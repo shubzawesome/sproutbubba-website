@@ -40,7 +40,6 @@ export const metadata: Metadata = {
       "A calm, beautifully designed baby & pregnancy tracker with secure midwife sharing and gentle reminders.",
     images: ["/logo.png"],
   },
-  icons: { icon: "/logo.png", apple: "/logo.png" },
   robots: { index: true, follow: true },
 };
 
