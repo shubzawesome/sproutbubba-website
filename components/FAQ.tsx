@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Reveal from "./Reveal";
+import SectionLeaves from "./art/SectionLeaves";
 import { ChevronDownIcon } from "./icons";
 
 const faqs = [
@@ -26,8 +27,8 @@ const faqs = [
     a: "Yes — securely sharing with your midwife is one of Sprout's signature features. Send a consent-based, read-only link so they can monitor feeds, growth and even live contractions, and remove their access whenever you like.",
   },
   {
-    q: "Does the AI replace my midwife or doctor?",
-    a: "No. The AI assistant offers calm, general guidance and helps you understand what you're seeing — but it never diagnoses and always points you to your midwife, GP or emergency services when professional care is needed.",
+    q: "Will Sprout remind me when things are due?",
+    a: "Yes. Sprout keeps an eye on the timings from what you log and gives gentle reminders — like when the next feed is likely due, or 5-1-1 guidance while you're timing contractions. They're nudges to lighten the load, never alarms, and you can snooze or turn them off anytime. They never replace your own instincts or your midwife or doctor.",
   },
 ];
 
@@ -66,7 +67,8 @@ function Item({ q, a, defaultOpen }: { q: string; a: string; defaultOpen?: boole
 
 export default function FAQ() {
   return (
-    <section id="faq" className="scroll-mt-20 py-20 sm:py-28">
+    <section id="faq" className="relative overflow-hidden scroll-mt-20 py-20 sm:py-28">
+      <SectionLeaves variant="branch-br" />
       <div className="mx-auto max-w-3xl px-5 sm:px-8">
         <Reveal className="text-center">
           <span className="text-[13px] font-semibold uppercase tracking-wider text-sprout-500">

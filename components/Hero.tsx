@@ -56,8 +56,8 @@ export default function Hero() {
 
             <Reveal delay={190}>
               <p className="mx-auto mt-9 max-w-xl text-[clamp(1.05rem,1.6vw,1.25rem)] leading-relaxed text-ink-soft lg:mx-0">
-                Track feeds, sleep, nappies, growth and more — with gentle AI
-                guidance and the option to share securely with your midwife or
+                Track feeds, sleep, nappies, growth and more — with gentle
+                reminders and the option to share securely with your midwife or
                 doctor. So you can hold less in your head, and more of your baby.
               </p>
             </Reveal>

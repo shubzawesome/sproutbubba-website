@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s · Sprout Bubba",
   },
   description:
-    "Track feeds, sleep, nappies, pumping, growth, milestones and contractions in one beautifully designed app. Share progress securely with your midwife and get AI-powered guidance when you need it most.",
+    "Track feeds, sleep, nappies, pumping, growth, milestones and contractions in one beautifully designed app. Share progress securely with your midwife or doctor, with gentle reminders when you need them most.",
   keywords: [
     "baby tracker",
     "newborn app",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sprout Bubba — Everything your baby needs.",
     description:
-      "A calm, beautifully designed baby & pregnancy tracker with secure midwife sharing and AI guidance.",
+      "A calm, beautifully designed baby & pregnancy tracker with secure midwife sharing and gentle reminders.",
     images: ["/logo.png"],
   },
   icons: { icon: "/logo.png", apple: "/logo.png" },
@@ -59,7 +59,7 @@ const jsonLd = {
   operatingSystem: "iOS, Android",
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   description:
-    "Baby & pregnancy tracker for feeds, sleep, nappies, growth, milestones and contractions, with secure midwife sharing and AI guidance.",
+    "Baby & pregnancy tracker for feeds, sleep, nappies, growth, milestones and contractions, with secure midwife sharing and gentle reminders.",
 };
 
 export default function RootLayout({

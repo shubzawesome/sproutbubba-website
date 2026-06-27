@@ -3,20 +3,22 @@ import Reveal from "./Reveal";
 import FeedingMock from "./mockups/FeedingMock";
 import SleepMock from "./mockups/SleepMock";
 import GrowthMock from "./mockups/GrowthMock";
-import AIChatMock from "./mockups/AIChatMock";
+import RemindersMock from "./mockups/RemindersMock";
 import ContractionMock from "./mockups/ContractionMock";
+import SectionLeaves from "./art/SectionLeaves";
 
 const shots = [
   { label: "Feeding timeline", node: <FeedingMock />, tilt: -2 },
   { label: "Sleep insights", node: <SleepMock />, tilt: 2 },
   { label: "Growth curves", node: <GrowthMock />, tilt: -2 },
-  { label: "AI assistant", node: <AIChatMock />, tilt: 2 },
+  { label: "Gentle reminders", node: <RemindersMock />, tilt: 2 },
   { label: "Contraction timer", node: <ContractionMock />, tilt: -2 },
 ];
 
 export default function ScreenshotGallery() {
   return (
-    <section className="overflow-hidden py-16 sm:py-24">
+    <section className="relative overflow-hidden py-16 sm:py-24">
+      <SectionLeaves variant="left" />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="text-[13px] font-semibold uppercase tracking-wider text-sprout-500">

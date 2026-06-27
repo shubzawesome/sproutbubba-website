@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import SectionLeaves from "./art/SectionLeaves";
 import {
   HeartIcon,
   PulseIcon,
@@ -24,6 +25,7 @@ const stages = [
 export default function JourneySection() {
   return (
     <section className="relative overflow-hidden bg-paper-soft py-20 sm:py-28">
+      <SectionLeaves variant="branch-br" />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="text-[13px] font-semibold uppercase tracking-wider text-sprout-500">
@@ -52,7 +54,7 @@ export default function JourneySection() {
                       className="absolute left-1/2 top-7 hidden h-px w-full bg-gradient-to-r from-sprout-300 to-sprout-200 lg:block"
                     />
                   )}
-                  <span className="relative z-10 grid h-14 w-14 place-items-center rounded-2xl bg-white text-sprout-600 shadow-[0_10px_24px_-14px_rgba(15,61,39,0.4)] ring-1 ring-line">
+                  <span className="relative z-10 grid h-14 w-14 place-items-center rounded-2xl bg-mint text-sprout-600 shadow-[0_10px_24px_-14px_rgba(15,61,39,0.4)] ring-1 ring-line">
                     <Icon className="h-6 w-6" />
                   </span>
                   <span className="mt-3.5 text-[14px] font-bold text-sprout-900">

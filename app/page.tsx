@@ -1,12 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import FeatureStrip from "@/components/FeatureStrip";
-import VideoSection from "@/components/VideoSection";
 import BeforeAfter from "@/components/BeforeAfter";
 import FeaturesSection from "@/components/FeaturesSection";
-import AISection from "@/components/AISection";
+import GuidanceSection from "@/components/GuidanceSection";
 import MidwifeSection from "@/components/MidwifeSection";
 import JourneySection from "@/components/JourneySection";
+import ComingSoonAI from "@/components/ComingSoonAI";
 import ScreenshotGallery from "@/components/ScreenshotGallery";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -26,12 +26,12 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <FeatureStrip />
-        <VideoSection />
         <BeforeAfter />
         <FeaturesSection />
-        <AISection />
+        <GuidanceSection />
         <MidwifeSection />
         <JourneySection />
+        <ComingSoonAI />
         <ScreenshotGallery />
         <Testimonials />
         <FAQ />

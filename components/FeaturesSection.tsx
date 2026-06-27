@@ -1,5 +1,6 @@
 import Feature from "./Feature";
 import Reveal from "./Reveal";
+import SectionLeaves from "./art/SectionLeaves";
 import FeedingMock from "./mockups/FeedingMock";
 import SleepMock from "./mockups/SleepMock";
 import GrowthMock from "./mockups/GrowthMock";
@@ -23,7 +24,8 @@ function MiniStat({ k, v }: { k: string; v: string }) {
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="relative scroll-mt-20 py-20 sm:py-28">
+    <section id="features" className="relative overflow-hidden scroll-mt-20 pt-10 pb-20 sm:pt-14 sm:pb-28">
+      <SectionLeaves variant="left" />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="text-[13px] font-semibold uppercase tracking-wider text-sprout-500">

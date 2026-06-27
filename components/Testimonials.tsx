@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import SectionLeaves from "./art/SectionLeaves";
 import { StoreButtons } from "./StoreButtons";
 import { HeartIcon, ShieldIcon, SparkleIcon } from "./icons";
 
@@ -22,7 +23,8 @@ const values = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="relative overflow-hidden py-20 sm:py-28">
+      <SectionLeaves variant="both" />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="text-[13px] font-semibold uppercase tracking-wider text-sprout-500">

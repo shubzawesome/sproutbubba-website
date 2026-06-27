@@ -1,31 +1,31 @@
 import PhoneFrame from "./PhoneFrame";
 import Reveal from "./Reveal";
-import AIChatMock from "./mockups/AIChatMock";
-import AIContextMock from "./mockups/AIContextMock";
-import { SparkleIcon, ShieldIcon, ClockIcon, FlagIcon } from "./icons";
+import RemindersMock from "./mockups/RemindersMock";
+import ContractionMock from "./mockups/ContractionMock";
+import { BellIcon, ClockIcon, PulseIcon, HeartIcon } from "./icons";
 
 const points = [
   {
-    icon: ClockIcon,
-    t: "Answers at 3am",
-    d: "Calm, practical guidance the moment a worry strikes — no waiting rooms.",
+    icon: BellIcon,
+    t: "Next-feed reminders",
+    d: "Sprout watches the clock from your last feed and gives you a gentle nudge when the next one's likely due.",
   },
   {
-    icon: SparkleIcon,
-    t: "Understands your baby's data",
-    d: "It reads the feeds, sleep and growth you've already logged, so advice fits your baby — not a generic one.",
+    icon: PulseIcon,
+    t: "5-1-1 contraction guidance",
+    d: "The contraction timer reads your pattern and tells you, in plain words, when it might be time to head in.",
   },
   {
-    icon: FlagIcon,
-    t: "Tells you when to seek help",
-    d: "Clear red-flag prompts to contact your midwife or GP — never a diagnosis.",
+    icon: HeartIcon,
+    t: "Kick counter & prep checklists",
+    d: "Keep an easy eye on movements, and tick off birth-prep and what-to-pack lists you share with your partner.",
   },
 ];
 
-export default function AISection() {
+export default function GuidanceSection() {
   return (
     <section
-      id="ai"
+      id="guidance"
       className="relative scroll-mt-20 overflow-hidden py-20 sm:py-28"
     >
       <div aria-hidden className="absolute inset-0 -z-10 bg-sprout-900" />
@@ -40,17 +40,17 @@ export default function AISection() {
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* two conversations, gently overlapped */}
+          {/* phones */}
           <Reveal direction="left" className="order-2 lg:order-1">
             <div className="relative mx-auto flex max-w-md items-center justify-center">
               <div className="relative w-[54%] translate-y-6 -rotate-[5deg]">
                 <PhoneFrame float="slower">
-                  <AIContextMock />
+                  <ContractionMock />
                 </PhoneFrame>
               </div>
               <div className="relative z-10 -ml-8 w-[60%] -translate-y-3 rotate-[4deg]">
                 <PhoneFrame float="slow">
-                  <AIChatMock />
+                  <RemindersMock />
                 </PhoneFrame>
               </div>
             </div>
@@ -59,16 +59,16 @@ export default function AISection() {
           {/* copy */}
           <Reveal direction="right" className="order-1 lg:order-2">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 text-[13px] font-semibold text-sprout-200 ring-1 ring-white/15">
-              <SparkleIcon className="h-4 w-4" />
-              AI guidance — not medical advice
+              <BellIcon className="h-4 w-4" />
+              Gentle guidance &amp; reminders
             </span>
             <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-bold leading-[1.08] tracking-[-0.02em] text-white">
-              Gentle AI guidance, exactly when you need it most.
+              A little nudge, exactly when you need one.
             </h2>
             <p className="mt-5 max-w-lg text-[1.08rem] leading-relaxed text-white/75">
-              Ask anything — fussy feeds, sleep regressions, nappy worries. Sprout
-              looks at what you&rsquo;ve actually tracked and answers in plain,
-              caring language, so you&rsquo;re never guessing alone.
+              Sprout quietly keeps track of the timings so you don&rsquo;t have to
+              — gentle reminders, clear contraction guidance, and shared
+              checklists that take the mental load off your shoulders.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -85,15 +85,15 @@ export default function AISection() {
               ))}
             </div>
 
-            {/* safety statement */}
+            {/* reassurance */}
             <div className="mt-8 flex items-start gap-3 rounded-2xl bg-white/[0.07] p-4 ring-1 ring-white/10">
-              <ShieldIcon className="mt-0.5 h-5 w-5 shrink-0 text-sprout-300" />
+              <ClockIcon className="mt-0.5 h-5 w-5 shrink-0 text-sprout-300" />
               <p className="text-[13.5px] leading-snug text-white/75">
                 <span className="font-semibold text-white">
-                  Sprout&rsquo;s AI never replaces a healthcare professional.
+                  Gentle, never pushy.
                 </span>{" "}
-                It offers general guidance and always points you to your midwife,
-                GP or emergency services when it matters.
+                Reminders are there to lighten the load — always trust your own
+                instincts, and your midwife or doctor, for anything that matters.
               </p>
             </div>
           </Reveal>
