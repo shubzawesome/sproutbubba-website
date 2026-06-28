@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-const siteUrl = "https://sproutbubba.app";
+const siteUrl = "https://sproutbubba.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -24,6 +24,13 @@ export const metadata: Metadata = {
   applicationName: "Sprout Bubba",
   authors: [{ name: "Sprout Bubba" }],
   alternates: { canonical: "/" },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "256x256" },
+    ],
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
+  },
   openGraph: {
     type: "website",
     url: siteUrl,
@@ -31,14 +38,21 @@ export const metadata: Metadata = {
     title: "Everything your baby needs. Beautifully organised.",
     description:
       "Track feeds, sleep, nappies, growth, milestones and contractions. Share securely with your midwife. Calm, premium, and made for new parents.",
-    images: [{ url: "/logo.png", width: 1200, height: 1200, alt: "Sprout Bubba" }],
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Sprout Bubba baby tracking app",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Sprout Bubba — Everything your baby needs.",
     description:
       "A calm, beautifully designed baby & pregnancy tracker with secure midwife sharing and gentle reminders.",
-    images: ["/logo.png"],
+    images: ["/opengraph-image"],
   },
   robots: { index: true, follow: true },
 };

@@ -5,24 +5,26 @@ const groups = [
   {
     title: "Product",
     links: [
-      { label: "Features", href: "#features" },
-      { label: "Guidance", href: "#guidance" },
-      { label: "Midwife sharing", href: "#midwives" },
-      { label: "Download", href: "#download" },
+      { label: "Features", href: "/#features" },
+      { label: "Guidance", href: "/#guidance" },
+      { label: "Midwife sharing", href: "/#midwives" },
+      { label: "Download", href: "/#download" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "Support", href: "mailto:support@sproutbubba.app" },
-      { label: "FAQ", href: "#faq" },
+      { label: "Support", href: "/support" },
+      { label: "Contact", href: "mailto:hello@sproutbubba.app" },
+      { label: "FAQ", href: "/#faq" },
     ],
   },
   {
     title: "Legal",
     links: [
-      { label: "Privacy", href: "#" },
-      { label: "Terms", href: "#" },
+      { label: "Privacy", href: "/privacy" },
+      { label: "Terms", href: "/terms" },
+      { label: "Account & data deletion", href: "/account-deletion" },
     ],
   },
 ];
