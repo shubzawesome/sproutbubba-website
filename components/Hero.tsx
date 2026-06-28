@@ -98,13 +98,13 @@ export default function Hero() {
                 />
 
                 {/* phones tucked into the lower-right corner so the baby stays visible */}
-                <div className="absolute bottom-[-7%] right-[-6%] flex w-[54%] items-end justify-center lg:right-[-12%]">
+                <div className="absolute bottom-[-7%] right-[-8%] flex w-[58%] items-end justify-center lg:right-[-14%]">
                   <div className="relative w-[50%] translate-y-3 -rotate-[8deg]">
                     <PhoneFrame float="slower">
                       <SleepMock />
                     </PhoneFrame>
                   </div>
-                  <div className="relative z-10 -ml-5 w-[56%] rotate-[5deg]">
+                  <div className="relative z-10 -ml-5 w-[60%] rotate-[5deg]">
                     <PhoneFrame float="slow">
                       <FeedingMock />
                     </PhoneFrame>

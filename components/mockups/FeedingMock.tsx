@@ -1,90 +1,64 @@
-import { StatusBar, ScreenScroll, AppHeader, Pill } from "./ui";
-import { BottleIcon, HeartIcon, ClockIcon } from "../icons";
-
-const events = [
-  { t: "2:40 pm", k: "Breast · Left", d: "18 min", icon: HeartIcon, tone: "mint" as const, now: true },
-  { t: "11:05 am", k: "Bottle · 120 ml", d: "Formula", icon: BottleIcon, tone: "sky" as const },
-  { t: "8:20 am", k: "Breast · Right", d: "22 min", icon: HeartIcon, tone: "mint" as const },
-];
+import { HeartIcon } from "../icons";
 
 export default function FeedingMock() {
   return (
-    <div className="flex h-full flex-col bg-paper-soft">
-      <StatusBar />
-      <ScreenScroll>
-        <AppHeader subtitle="Today" title="Feeding" />
+    <div className="flex h-full flex-col overflow-hidden bg-[#fff7ef] text-[#4f3c34]">
+      <div className="px-4 pt-12">
+        <div className="mb-4 flex items-center justify-center gap-2">
+          <span className="grid h-8 w-8 place-items-center rounded-full bg-[#9bc9d7] text-[13px] font-bold text-white">
+            M
+          </span>
+          <span className="text-[18px] font-bold text-[#4f3c34]">Maya</span>
+        </div>
 
-        {/* live timer card */}
-        <div className="card-soft rounded-3xl p-4">
-          <div className="flex items-center justify-between">
-            <Pill tone="mint">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-sprout-500" />
-              Live · Left
-            </Pill>
-            <span className="text-[11px] font-medium text-ink-soft">Started 2:40</span>
-          </div>
-          <div className="mt-3 flex items-end gap-1">
-            <span className="text-[40px] font-bold leading-none tracking-tight text-sprout-900">
-              18
+        <p className="mb-2 text-[11px] font-bold text-[#9b9b9b]">Feed timer</p>
+
+        <div className="rounded-[1.6rem] bg-[#e6f1e6] p-3.5 shadow-[0_16px_28px_-24px_rgba(79,60,52,0.28)]">
+          <div className="mb-3 flex items-center justify-between">
+            <span className="text-[12px] font-bold text-[#9a9a9a]">
+              Breast - left
             </span>
-            <span className="mb-1 text-sm font-semibold text-ink-soft">min</span>
-            <span className="mb-1 ml-1 text-lg font-bold text-sprout-400">04</span>
-            <span className="mb-1 text-sm font-semibold text-ink-soft">s</span>
+            <span className="rounded-full bg-white/55 px-2 py-1 text-[10px] font-bold text-[#e9835d]">
+              Live
+            </span>
           </div>
-          <div className="mt-3 flex gap-2">
-            <button className="flex-1 rounded-xl bg-sprout-400 py-2 text-[13px] font-semibold text-sprout-900">
+
+          <div className="flex flex-col items-center text-center">
+            <div className="relative grid h-16 w-16 place-items-center rounded-full bg-[#f6e8dc]">
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background:
+                    "conic-gradient(#f08a61 0deg 74deg, transparent 74deg 360deg)",
+                }}
+              />
+              <div className="relative grid h-12 w-12 place-items-center rounded-full bg-[#e6f1e6] text-[#f08a61]">
+                <HeartIcon className="h-6 w-6" />
+              </div>
+            </div>
+
+            <div className="mt-2.5 text-[38px] font-bold leading-none tracking-normal text-[#4f3c34]">
+              18:52
+            </div>
+            <div className="mt-1 text-[12px] font-semibold text-[#9a9a9a]">
+              remaining
+            </div>
+            <div className="mt-1 text-[10px] font-bold text-[#a5a5a5]">
+              target 6:13 PM
+            </div>
+          </div>
+
+          <div className="mt-4 grid grid-cols-[1fr_0.72fr] gap-2">
+            <button className="rounded-2xl bg-[#f08a61] py-2.5 text-[12px] font-bold text-white shadow-[0_10px_18px_-14px_rgba(240,138,97,0.9)]">
+              Stop & log
+            </button>
+            <button className="rounded-2xl border border-[#f08a61] bg-[#eef6ec] py-2.5 text-[12px] font-bold text-[#d16742]">
               Pause
             </button>
-            <button className="flex-1 rounded-xl bg-mint py-2 text-[13px] font-semibold text-sprout-700">
-              Switch side
-            </button>
           </div>
         </div>
-
-        {/* daily summary */}
-        <div className="mt-4 grid grid-cols-3 gap-2">
-          {[
-            { n: "7", l: "Feeds" },
-            { n: "320", l: "ml" },
-            { n: "1h 9m", l: "Nursed" },
-          ].map((s) => (
-            <div key={s.l} className="rounded-2xl bg-white p-3 text-center shadow-[0_6px_18px_-12px_rgba(15,61,39,0.3)]">
-              <div className="text-[17px] font-bold text-sprout-900">{s.n}</div>
-              <div className="text-[10px] font-medium text-ink-soft">{s.l}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* timeline */}
-        <p className="mb-2 mt-5 flex items-center gap-1.5 text-[12px] font-semibold text-ink-soft">
-          <ClockIcon className="h-3.5 w-3.5" /> Timeline
-        </p>
-        <div className="relative space-y-3 pl-4">
-          <span className="absolute left-[3px] top-1 h-[calc(100%-1rem)] w-px bg-line" />
-          {events.map((e) => {
-            const Icon = e.icon;
-            return (
-              <div key={e.t} className="relative">
-                <span
-                  className={`absolute -left-[13px] top-1.5 h-2 w-2 rounded-full ${
-                    e.now ? "bg-sprout-400 ring-4 ring-sprout-100" : "bg-line"
-                  }`}
-                />
-                <div className="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-[0_6px_18px_-14px_rgba(15,61,39,0.3)]">
-                  <span className="grid h-9 w-9 place-items-center rounded-xl bg-mint text-sprout-600">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <div className="flex-1">
-                    <div className="text-[13px] font-semibold text-sprout-900">{e.k}</div>
-                    <div className="text-[11px] text-ink-soft">{e.d}</div>
-                  </div>
-                  <span className="text-[11px] font-medium text-ink-soft">{e.t}</span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </ScreenScroll>
+      </div>
     </div>
   );
 }

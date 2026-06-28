@@ -3,11 +3,10 @@ import Feature from "./Feature";
 import Reveal from "./Reveal";
 import SectionLeaves from "./art/SectionLeaves";
 import FeedingTimelineVisual from "./FeedingTimelineVisual";
-import SleepMock from "./mockups/SleepMock";
 import GrowthMock from "./mockups/GrowthMock";
 import {
   BottleIcon,
-  MoonIcon,
+  HeartIcon,
   GrowthIcon,
   CheckIcon,
 } from "./icons";
@@ -35,6 +34,34 @@ function FeedingCue({
       <div>
         <div className="text-[15px] font-bold text-sprout-900">{v}</div>
         <div className="text-[12px] font-medium text-ink-soft">{k}</div>
+      </div>
+    </div>
+  );
+}
+
+function HomeLogScreen() {
+  return (
+    <div className="h-full overflow-hidden bg-[#fff7ef]">
+      <div className="px-5 pb-3 pt-12">
+        <div className="flex items-center justify-center gap-2.5">
+          <span className="grid h-8 w-8 place-items-center rounded-full bg-[#9bc9d7] text-[13px] font-bold text-white">
+            M
+          </span>
+          <span className="text-[18px] font-bold text-[#4f3c34]">Maya</span>
+          <span className="text-[14px] font-bold leading-none text-[#4f3c34]/75">
+            ^
+          </span>
+        </div>
+      </div>
+      <div className="relative h-[calc(100%-5.75rem)] overflow-hidden">
+        <Image
+          src="/art/app-home-log-v1.png"
+          alt="Sprout Bubba home screen with quick logging buttons"
+          width={698}
+          height={1540}
+          sizes="(max-width: 1024px) 70vw, 19rem"
+          className="w-full -translate-y-[4.35rem] select-none"
+        />
       </div>
     </div>
   );
@@ -75,34 +102,34 @@ export default function FeaturesSection() {
             </div>
           </Feature>
 
-          {/* Sleep */}
+          {/* Easy logging */}
           <Feature
-            eyebrow="Sleep"
-            icon={MoonIcon}
-            title={<>Elegant sleep charts that reveal the pattern.</>}
-            body="Naps and nights roll up into clear weekly charts, longest-stretch trends and night-waking counts — so you can finally see the rhythm forming."
-            mockup={<SleepMock />}
+            eyebrow="Easy logging"
+            icon={HeartIcon}
+            title={<>Easy to log details, even one-handed.</>}
+            body="Open the home screen and tap what just happened — a feed, nappy, sleep, pumping, medicine, temperature, growth or activity. The important details are captured before they slip from your mind."
+            mockup={<HomeLogScreen />}
             reverse
             tilt={2}
             copyBackground={
               <>
-                <div className="absolute -right-20 top-8 hidden h-72 w-72 rounded-full bg-mint-deep/45 blur-3xl lg:block" />
+                <div className="absolute -right-20 top-8 hidden h-72 w-72 rounded-full bg-blush-soft/60 blur-3xl lg:block" />
                 <Image
-                src="/art/sleep-background-v1-transparent.png"
-                alt=""
-                width={1706}
-                height={922}
-                sizes="(max-width: 1024px) 90vw, 44vw"
-                  className="absolute -left-[4%] -top-24 hidden w-[43rem] max-w-none opacity-[0.34] mix-blend-multiply saturate-[0.92] [mask-image:linear-gradient(to_right,transparent_0%,black_38%,black_100%)] lg:block"
+                  src="/art/sleep-background-v1-transparent.png"
+                  alt=""
+                  width={1706}
+                  height={922}
+                  sizes="(max-width: 1024px) 90vw, 44vw"
+                  className="absolute -left-[4%] -top-24 hidden w-[43rem] max-w-none opacity-[0.22] mix-blend-multiply saturate-[0.9] [mask-image:linear-gradient(to_right,transparent_0%,black_38%,black_100%)] lg:block"
                 />
               </>
             }
           >
             <ul className="space-y-2.5">
               {[
-                "Weekly totals & averages, beautifully visualised",
-                "Longest-stretch and night-waking insights",
-                "Spot the rhythm before you feel it",
+                "Fast buttons for the things you log all day",
+                "Timer, nappies and notes kept in one place",
+                "Designed for tired hands and late-night moments",
               ].map((t) => (
                 <li key={t} className="flex items-center gap-3 text-[15px] text-ink">
                   <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-mint text-sprout-600">
