@@ -9,8 +9,6 @@ import {
   BottleIcon,
   MoonIcon,
   GrowthIcon,
-  DropIcon,
-  HeartIcon,
   CheckIcon,
 } from "./icons";
 
@@ -118,7 +116,7 @@ export default function FeaturesSection() {
 
           {/* centered full-width moment — breaks the alternating rhythm */}
           <Reveal direction="scale" className="py-2">
-            <div className="relative mx-auto max-w-3xl overflow-hidden rounded-[2rem] border border-line bg-paper-soft px-8 py-12 text-center sm:py-14">
+            <div className="relative mx-auto min-h-[27rem] max-w-4xl overflow-hidden rounded-[2rem] border border-line bg-paper-soft px-8 pb-56 pt-12 text-center sm:min-h-[30rem] sm:px-12 sm:pb-64 sm:pt-14">
               <div
                 aria-hidden
                 className="absolute inset-0 -z-10 animate-gradient opacity-60"
@@ -128,10 +126,18 @@ export default function FeaturesSection() {
                   backgroundSize: "180% 180%",
                 }}
               />
-              <p className="text-[13px] font-semibold uppercase tracking-wider text-sprout-500">
+              <Image
+                src="/art/parent-sync-v1-transparent.png"
+                alt=""
+                width={1738}
+                height={905}
+                sizes="(max-width: 1024px) 92vw, 56rem"
+                className="pointer-events-none absolute inset-x-1/2 bottom-[-2.5rem] z-0 w-[58rem] max-w-none -translate-x-1/2 select-none opacity-75 sm:bottom-[-3.5rem]"
+              />
+              <p className="relative z-10 text-[13px] font-semibold uppercase tracking-wider text-sprout-500">
                 Both parents, one source of truth
               </p>
-              <p className="mx-auto mt-3 max-w-2xl text-[clamp(1.5rem,3vw,2.2rem)] font-bold leading-[1.15] tracking-[-0.01em] text-sprout-900">
+              <p className="relative z-10 mx-auto mt-3 max-w-2xl text-[clamp(1.5rem,3vw,2.2rem)] font-bold leading-[1.15] tracking-[-0.01em] text-sprout-900">
                 Log from either phone and it syncs instantly. No more
                 &ldquo;did you already feed her?&rdquo; texts at 2am.
               </p>
@@ -146,23 +152,20 @@ export default function FeaturesSection() {
             body="Log weight, length and head circumference and watch them plot against percentile curves — the same view your midwife uses, in your pocket."
             mockup={<GrowthMock />}
             tilt={-1.5}
-          >
-            <div className="flex flex-wrap gap-2.5">
-              {[
-                { i: GrowthIcon, t: "Percentile curves" },
-                { i: DropIcon, t: "Weight & length" },
-                { i: HeartIcon, t: "Milestones" },
-              ].map(({ i: Icon, t }) => (
-                <span
-                  key={t}
-                  className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-2 text-[14px] font-medium text-sprout-800"
-                >
-                  <Icon className="h-4 w-4 text-sprout-500" />
-                  {t}
-                </span>
-              ))}
-            </div>
-          </Feature>
+            copyBackground={
+              <>
+                <div className="absolute -bottom-10 -left-12 hidden h-72 w-72 rounded-full bg-butter/45 blur-3xl lg:block" />
+                <Image
+                  src="/art/growth-background-v1-transparent.png"
+                  alt=""
+                  width={1774}
+                  height={887}
+                  sizes="(max-width: 1024px) 90vw, 44vw"
+                  className="absolute -bottom-24 -left-24 hidden w-[44rem] max-w-none opacity-[0.4] mix-blend-multiply saturate-[0.95] [mask-image:linear-gradient(to_top,black_0%,black_58%,transparent_100%)] lg:block"
+                />
+              </>
+            }
+          />
         </div>
       </div>
     </section>

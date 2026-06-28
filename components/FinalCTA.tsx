@@ -1,6 +1,7 @@
+import Image from "next/image";
+
 import Reveal from "./Reveal";
 import { StoreButtons } from "./StoreButtons";
-import MeadowMother from "./art/MeadowMother";
 import { LittleHeart } from "./art/Botanicals";
 
 export default function FinalCTA() {
@@ -36,11 +37,16 @@ export default function FinalCTA() {
             <StoreButtons size="lg" />
           </div>
 
-          {/* meadow scene anchoring the bottom */}
-          <MeadowMother
-            aria-hidden
-            className="mt-10 h-auto w-full max-w-3xl mx-auto select-none"
-          />
+          <div className="relative mx-auto mt-10 h-[260px] w-full max-w-4xl overflow-hidden sm:h-[330px]">
+            <Image
+              src="/art/final-cta-mum-v1-transparent.png"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 95vw, 896px"
+              className="object-contain object-bottom drop-shadow-[0_22px_36px_rgba(77,60,41,0.12)]"
+              priority={false}
+            />
+          </div>
         </div>
       </Reveal>
     </section>

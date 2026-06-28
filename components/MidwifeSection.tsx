@@ -1,7 +1,5 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
-import PhoneFrame from "./PhoneFrame";
-import ContractionMock from "./mockups/ContractionMock";
-import MidwifeArt from "./art/MidwifeArt";
 import { LeafBranch } from "./art/Botanicals";
 import { HeartIcon, ShieldIcon, ShareIcon, PulseIcon, CheckIcon } from "./icons";
 
@@ -100,16 +98,22 @@ export default function MidwifeSection() {
           </p>
         </Reveal>
 
-        <div className="mt-16 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="mt-10 grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           {/* illustration */}
           <Reveal direction="left">
-            <div className="relative mx-auto max-w-md">
-              <MidwifeArt className="h-auto w-full drop-shadow-[0_28px_56px_rgba(80,100,80,0.2)]" />
-              <div className="absolute -bottom-4 right-0 w-[34%] min-w-[8.5rem] max-w-[11rem]">
-                <PhoneFrame float="slower" tilt={3}>
-                  <ContractionMock />
-                </PhoneFrame>
-              </div>
+            <div className="relative mx-auto max-w-[34rem]">
+              <div
+                aria-hidden
+                className="absolute left-1/2 top-1/2 h-[82%] w-[82%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint-deep/55 blur-3xl"
+              />
+              <Image
+                src="/art/midwife-sharing-v1-transparent.png"
+                alt="A watercolor illustration of a parent and baby securely sharing health updates with a midwife"
+                width={1254}
+                height={1254}
+                sizes="(max-width: 1024px) 86vw, 34rem"
+                className="relative h-auto w-full select-none drop-shadow-[0_26px_50px_rgba(80,100,80,0.13)]"
+              />
             </div>
           </Reveal>
 
