@@ -29,7 +29,7 @@ export default function AccountDeletionPage() {
       <LegalSection heading="Request deletion by email">
         <p>
           If you can’t access the app, email{" "}
-          <a href="mailto:privacy@sproutbubba.app">privacy@sproutbubba.app</a>{" "}
+          <a href="mailto:privacy@sproutbubba.com">privacy@sproutbubba.com</a>{" "}
           from the address on your account with the subject “Delete my account”.
           We may ask you to verify your identity before processing the request,
           and we’ll confirm once it’s done.
@@ -65,7 +65,7 @@ export default function AccountDeletionPage() {
       <LegalSection heading="Questions">
         <p>
           Contact{" "}
-          <a href="mailto:privacy@sproutbubba.app">privacy@sproutbubba.app</a> if
+          <a href="mailto:privacy@sproutbubba.com">privacy@sproutbubba.com</a> if
           you have any questions about deleting your account or data. See also
           our <a href="/privacy">Privacy Policy</a>.
         </p>

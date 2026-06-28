@@ -128,7 +128,7 @@ export default function TermsPage() {
       <LegalSection heading="Contact">
         <p>
           Questions about these Terms? Email{" "}
-          <a href="mailto:hello@sproutbubba.app">hello@sproutbubba.app</a>.
+          <a href="mailto:hello@sproutbubba.com">hello@sproutbubba.com</a>.
         </p>
       </LegalSection>
     </LegalShell>

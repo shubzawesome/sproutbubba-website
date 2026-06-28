@@ -18,7 +18,7 @@ export default function SupportPage() {
       <LegalSection heading="Contact us">
         <p>
           Email{" "}
-          <a href="mailto:support@sproutbubba.app">support@sproutbubba.app</a>{" "}
+          <a href="mailto:support@sproutbubba.com">support@sproutbubba.com</a>{" "}
           and we’ll get back to you, usually within 2 business days. It helps to
           include your device (iPhone/Android), the app version, and a short
           description of what you were doing.

@@ -20,7 +20,7 @@ export default function PrivacyPage() {
           The Service is operated by Support Lake (the “Company”), the developer
           of Sprout Bubba. If you have any questions about this policy or your
           data, contact us at{" "}
-          <a href="mailto:privacy@sproutbubba.app">privacy@sproutbubba.app</a>.
+          <a href="mailto:privacy@sproutbubba.com">privacy@sproutbubba.com</a>.
         </p>
       </LegalSection>
 
@@ -158,8 +158,8 @@ export default function PrivacyPage() {
       <LegalSection heading="Contact us">
         <p>
           Questions or requests about your privacy? Email{" "}
-          <a href="mailto:privacy@sproutbubba.app">privacy@sproutbubba.app</a> or{" "}
-          <a href="mailto:hello@sproutbubba.app">hello@sproutbubba.app</a>.
+          <a href="mailto:privacy@sproutbubba.com">privacy@sproutbubba.com</a> or{" "}
+          <a href="mailto:hello@sproutbubba.com">hello@sproutbubba.com</a>.
         </p>
       </LegalSection>
     </LegalShell>

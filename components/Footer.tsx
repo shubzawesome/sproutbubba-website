@@ -15,7 +15,7 @@ const groups = [
     title: "Company",
     links: [
       { label: "Support", href: "/support" },
-      { label: "Contact", href: "mailto:hello@sproutbubba.app" },
+      { label: "Contact", href: "mailto:hello@sproutbubba.com" },
       { label: "FAQ", href: "/#faq" },
     ],
   },
